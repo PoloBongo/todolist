@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Todolist</title>
+</head>
+
+<body>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <div class="col-lg-10 col-md-8 col-12">
+        <!-- permet de créer la card avec ces contours -->
+        <div class="card">
+            <!-- permet de créer la card avec ces contours -->
+            <div class="card-header">
+                <!-- permet de créer la card avec ces contours -->
+                <section>
+                    <input type="text" placeholder="Entrez un produit" id="app-field">
+                    <!-- 1er dropdown pour entrer la catégorie où l'utilisateur veut mettre sa tâche -->
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="app-btn"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            OK
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <button class="btn btn-dark px-3 py-0">Séléctionner la Catégorie :</button>
+                            <button class="dropdown-item" type="button" value="all"></button>
+                            <!--sert a ce que quand la tâche ce met dans le tableau la card s'agrandit pour que la tâche ne soit pas hors de la card-->
+                            <button id="check_house" class="dropdown-item" type="button" value="House-Category"
+                                onclick="space()">Category</button>
+                            <button id="check_homeworks" class="dropdown-item" type="button" value="Homeworks-Another"
+                                onclick="space2()">Another</button>
+                            <button id="check_activities" class="dropdown-item" type="button"
+                                value="Activities-Something" onclick="space3()">Something</button>
+                        </div>
+                    </div>
+                    <!-- 2ème dropdown pour afficher-cacher les catégorie et ajouter l'émoji "trash" pour supprimer les tâches -->
+                    <div class="afficher-cacher">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="app-btn"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Afficher-Cacher les Catégories
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <button class="dropdown-item" type="button" value="House-Category"
+                                onclick="house_categorie()">Afficher-Cacher la Catégorie "Maison"</button>
+                            <button class="dropdown-item" type="button" value="Homeworks-Category"
+                                onclick="homeworks_categorie()">Afficher-Cacher la Catégorie "HomeWorks"</button>
+                            <button class="dropdown-item" type="button" value="Activities-Category"
+                                onclick="activities_categorie()">Afficher-Cacher la Catégorie "Activities"</button>
+                            <button id="th" class="dropdown-item" type="button" value="Delete"
+                                onclick="delete_categorie()">Afficher-Cacher la 🗑️</button>
+                        </div>
+                    </div>
+                    <br><br> <!-- permet de bien placer la barre qui spérare les noms de catégories et les tâches -->
+                    <!-- DEBUT DES NOMS DE CATEGORIES ANIMER -->
+                    <div class="wrap">
+                        <h1 class="cmyk-house">
+                            <div class="position-categorie1">
+                                <span class="c">H</span>
+                                <span class="m">O</span>
+                                <span class="y">U</span>
+                                <span class="k">S</span>
+                                <span class="c">E</span>
+                            </div>
+                        </h1>
+                    </div>
+                    <div class="wrap">
+                        <h1 class="cmyk-homeworks">
+                            <div class="position-categorie2">
+                                <span class="c">H</span>
+                                <span class="m">O</span>
+                                <span class="y">M</span>
+                                <span class="k">E</span>
+                                <span class="c">W</span>
+                                <span class="m">O</span>
+                                <span class="c">R</span>
+                                <span class="m">K</span>
+                                <span class="y">S</span>
+                        </div>
+                        </h1>
+                    </div>
+                    <div class="wrap">
+                        <h1 class="cmyk-activities">
+                            <div class="position-categorie3">
+                                <span class="c">A</span>
+                                <span class="m">C</span>
+                                <span class="y">T</span>
+                                <span class="k">V</span>
+                                <span class="c">I</span>
+                                <span class="m">T</span>
+                                <span class="c">I</span>
+                                <span class="m">E</span>
+                                <span class="k">S</span>
+                            </div>
+                        </h1>
+                    </div>
+                    <!-- FIN DES NOMS DE CATEGORIES ANIMER -->
+                    <hr> <!-- permet créer un espace après le "hr" -->
+                    <li id="all">
+                        <!--la classe permet que les tâches restent dans la card-->
+
+                    </li>
+                    <strong class="text-size">
+                        <!-- taille du texte -->
+                        <ul id="House-Category">
+                            <!-- première catégorie où le texte va ce mettre dedans -->
+
+                        </ul>
+                    </strong>
+                    <strong class="text-size">
+                        <!-- taille du texte -->
+                        <ul id="Homeworks-Category">
+                            <!-- deuxième catégorie où le texte va ce mettre dedans -->
+
+                        </ul>
+                    </strong>
+                    <strong class="text-size">
+                        <!-- taille du texte -->
+                        <ul id="Activities-Category">
+                            <!-- troisième catégorie où le texte va ce mettre dedans -->
+
+                        </ul>
+                    </strong>
+            </div>
+        </div>
+    </div>
+    </section>
+    <script src="main.js"></script> <!-- permet de faire charger le fichier javascript -->
+
+</body>
+
+</html>
