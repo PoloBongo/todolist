@@ -15,17 +15,32 @@ let afficher = document.getElementById("afficher");
 
 function space() { // PERMET D AGGRANDIR LE BLOCK QUAND ON ENVOIE LA TACHE
   let espace = document.createElement("hr");
-  alllist.appendChild(espace);
+  let text = field.value;
+  if (text == "") {
+    alert("Veuillez rentrer quelques chose !")
+  } else {
+    alllist.appendChild(espace);
+  }
 }
 
 function space2() { // PERMET D AGGRANDIR LE BLOCK QUAND ON ENVOIE LA TACHE
   let espace2 = document.createElement("hr");
-  alllist.appendChild(espace2);
+  let text = field.value;
+  if (text == "") {
+    alert("Veuillez rentrer quelques chose !")
+  } else {
+    alllist.appendChild(espace2);
+  }
 }
 
 function space3() { // PERMET D AGGRANDIR LE BLOCK QUAND ON ENVOIE LA TACHE
   let espace3 = document.createElement("hr");
-  alllist.appendChild(espace3);
+  let text = field.value;
+  if (text == "") {
+    alert("Veuillez rentrer quelques chose !")
+  } else {
+    alllist.appendChild(espace3);
+  }
 }
 
 ///////////////////// DEBUT AFFICHER-CACHER LES TITRES DES CATEGORIES /////////////////////

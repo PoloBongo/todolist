@@ -155,26 +155,6 @@ ul {
 
 /* COULEUR / STYLE ANIMER DES NOM DES CATEGORIES */
 
-html,
-body {
-  min-height: 100vh;
-  background: rgb(224, 205, 205);
-  position: relative;
-  font-family: 'Dosis', sans-serif;
-}
-
-body::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  z-index: -1;
-  width: 100%;
-  height: 3.5%;
-  background-image: linear-gradient(to left, rgba(0, 255, 255, 0.8), rgba(0, 255, 255, 10.8) 25%, rgba(255, 0, 255, 0.8) 25%, rgba(255, 0, 255, 0.8) 50%, rgba(255, 255, 0, .8) 50%, rgba(255, 255, 0, 0.8) 75%, rgba(0, 0, 0, 0.8) 75%);
-  background-size: 25% 100%;
-  background-repeat: repeat-X;
-}
-
 .wrap {
   position: absolute;
   top: 6%;
